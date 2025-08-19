@@ -1,7 +1,10 @@
 <!-- Demo Video -->
 <p align="center">
-  <video src="demo.mp4" controls playsinline muted loop style="max-width:100%; height:auto;"></video>
+  <a href="https://youtu.be/cEHILRR163k" target="_blank">
+    <img src="https://img.youtube.com/vi/cEHILRR163k/0.jpg" alt="Demo Video" style="max-width:100%;">
+  </a>
 </p>
+
 
 If the video doesn't display in your browser, you can download/view it here: [demo.mp4](demo.mp4)
 
