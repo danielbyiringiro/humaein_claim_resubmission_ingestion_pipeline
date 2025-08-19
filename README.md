@@ -1,3 +1,10 @@
+<!-- Demo Video -->
+<p align="center">
+  <video src="demo.mkv" controls playsinline muted loop style="max-width:100%; height:auto;"></video>
+</p>
+
+If the video doesn't display in your browser, you can download/view it here: [demo.mkv](demo.mkv)
+
 # Claim Resubmission Ingestion Pipeline
 
 An ingestion pipeline that processes EMR claim files from multiple source formats (CSV and JSON), identifies denied claims that are eligible for resubmission based on business rules, and produces:
