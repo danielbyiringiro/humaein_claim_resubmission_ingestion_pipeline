@@ -1,9 +1,9 @@
 <!-- Demo Video -->
 <p align="center">
-  <video src="demo.mkv" controls playsinline muted loop style="max-width:100%; height:auto;"></video>
+  <video src="demo.mp4" controls playsinline muted loop style="max-width:100%; height:auto;"></video>
 </p>
 
-If the video doesn't display in your browser, you can download/view it here: [demo.mkv](demo.mkv)
+If the video doesn't display in your browser, you can download/view it here: [demo.mp4](demo.mp4)
 
 # Claim Resubmission Ingestion Pipeline
 
