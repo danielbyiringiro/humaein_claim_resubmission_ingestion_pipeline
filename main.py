@@ -114,10 +114,18 @@ class ClaimsProcessor:
     def normalize_row(self, raw_row: Dict[str, Any], source: str) -> Dict[str, Any]:
         """Transform raw data into standardized schema"""
         row = self.normalize_field_names(raw_row, source)
-        normalized = {
-            key: self.clean_value(value)
-            for key, value in row.items()
-        }
+        normalized = {}
+        for key, value in row.items():
+            if key in ("claim_id", "patient_id"):
+                # Preserve original capitalization/formatting for IDs
+                if value is None or (isinstance(value, str) and value.strip() == ""):
+                    normalized[key] = None
+                elif isinstance(value, str):
+                    normalized[key] = value.strip()
+                else:
+                    normalized[key] = str(value)
+            else:
+                normalized[key] = self.clean_value(value)
         
         # Special handling for dates
         if submitted_at := normalized.get("submitted_at"):
@@ -269,8 +277,8 @@ class ClaimsProcessor:
         self.metrics["total_rejected"] = self.metrics.get("total_rejected", 0) + 1
         
         rejected_claim = {
-            "claim_id": claim.get("claim_id"),
-            "patient_id": claim.get("patient_id"),
+            "claim_id": claim.get("claim_id").upper() if claim['claim_id'] is not None else None,
+            "patient_id": claim.get("patient_id").upper() if claim.get("patient_id") is not None else None,
             "procedure_code": claim.get("procedure_code"),
             "denial_reason": claim.get("denial_reason"),
             "submitted_at": claim["submitted_at"].isoformat() if claim.get("submitted_at") else None,
