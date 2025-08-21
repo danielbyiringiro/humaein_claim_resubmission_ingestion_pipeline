@@ -1,12 +1,10 @@
-<!-- Demo Video -->
+# Demo Video
+
 <p align="center">
   <a href="https://youtu.be/cEHILRR163k" target="_blank">
     <img src="https://img.youtube.com/vi/cEHILRR163k/0.jpg" alt="Demo Video" style="max-width:100%;">
   </a>
 </p>
-
-
-Watch the demo video above
 
 # Claim Resubmission Ingestion Pipeline
 
